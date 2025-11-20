@@ -1,4 +1,4 @@
--- Auto-generated from schema-views-postgres.psd1 (map@9d3471b)
+-- Auto-generated from schema-views-postgres.psd1 (map@62c9c93)
 -- engine: postgres
 -- table:  crypto_algorithms
 -- Contract view for [crypto_algorithms]
@@ -14,7 +14,7 @@ SELECT
   created_at
 FROM crypto_algorithms;
 
--- Auto-generated from schema-views-feature-postgres.psd1 (map@mtime:2025-11-20T14:33:32Z)
+-- Auto-generated from schema-views-feature-postgres.psd1 (map@62c9c93)
 -- engine: postgres
 -- table:  crypto_algorithms_pq_readiness_summary
 -- One-row PQ readiness snapshot

@@ -1,4 +1,4 @@
--- Auto-generated from schema-views-mysql.psd1 (map@db2f8b8)
+-- Auto-generated from schema-views-mysql.psd1 (map@62c9c93)
 -- engine: mysql
 -- table:  crypto_algorithms
 -- Contract view for [crypto_algorithms]
@@ -14,7 +14,7 @@ SELECT
   created_at
 FROM crypto_algorithms;
 
--- Auto-generated from schema-views-feature-mysql.psd1 (map@mtime:2025-11-20T14:32:27Z)
+-- Auto-generated from schema-views-feature-mysql.psd1 (map@62c9c93)
 -- engine: mysql
 -- table:  crypto_algorithms_pq_readiness_summary
 -- One-row PQ readiness snapshot
