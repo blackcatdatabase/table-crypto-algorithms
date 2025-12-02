@@ -1,6 +1,7 @@
--- Auto-generated from feature-modules-postgres.psd1 (map@mtime:2025-11-27T14:08:26Z)
+-- Auto-generated from feature-modules-postgres.yaml (map@94ebe6c)
 -- engine: postgres
 -- table:  crypto_algorithms_deprecation
+
 -- Algorithms nearing deprecation (status active but deprecation_date set)
 CREATE OR REPLACE VIEW vw_crypto_algorithms_deprecation AS
 SELECT
@@ -14,9 +15,10 @@ FROM crypto_algorithms
 WHERE status = 'deprecated'
 ORDER BY created_at ASC;
 
--- Auto-generated from feature-modules-postgres.psd1 (map@mtime:2025-11-27T14:08:26Z)
+-- Auto-generated from feature-modules-postgres.yaml (map@94ebe6c)
 -- engine: postgres
 -- table:  key_wrapper_layers_pq_readiness_summary
+
 -- One-row PQ readiness snapshot
 CREATE OR REPLACE VIEW vw_key_wrapper_layers_pq_readiness_summary AS
 SELECT

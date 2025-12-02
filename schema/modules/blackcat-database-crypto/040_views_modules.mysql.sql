@@ -1,6 +1,7 @@
--- Auto-generated from feature-modules-mysql.psd1 (map@mtime:2025-11-27T17:06:04Z)
+-- Auto-generated from feature-modules-mysql.yaml (map@94ebe6c)
 -- engine: mysql
 -- table:  crypto_algorithms_deprecation
+
 -- Algorithms nearing deprecation (status active but deprecation_date set)
 CREATE OR REPLACE ALGORITHM=TEMPTABLE SQL SECURITY INVOKER VIEW vw_crypto_algorithms_deprecation AS
 SELECT
@@ -14,9 +15,10 @@ FROM crypto_algorithms
 WHERE status = 'deprecated'
 ORDER BY created_at ASC;
 
--- Auto-generated from feature-modules-mysql.psd1 (map@mtime:2025-11-27T17:06:04Z)
+-- Auto-generated from feature-modules-mysql.yaml (map@94ebe6c)
 -- engine: mysql
 -- table:  key_wrapper_layers_pq_readiness_summary
+
 -- One-row PQ readiness snapshot
 CREATE OR REPLACE ALGORITHM=TEMPTABLE SQL SECURITY INVOKER VIEW vw_key_wrapper_layers_pq_readiness_summary AS
 SELECT
