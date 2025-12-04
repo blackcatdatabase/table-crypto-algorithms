@@ -38,7 +38,7 @@ final class Criteria extends BaseCriteria
     /** Columns used for full-text LIKE/ILIKE searches. */
     protected function searchable(): array
     {
-        return [ 'name', 'variant', 'variant_norm' ];
+        return [ 'class', 'name', 'variant', 'variant_norm', 'status' ];
     }
 
 /** Columns allowed in ORDER BY (falls back to filterable() when empty). */
