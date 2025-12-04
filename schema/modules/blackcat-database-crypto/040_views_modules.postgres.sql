@@ -1,4 +1,4 @@
--- Auto-generated from feature-modules-postgres.yaml (map@94ebe6c)
+-- Auto-generated from feature-modules-postgres.yaml (map@85230ed)
 -- engine: postgres
 -- table:  crypto_algorithms_deprecation
 
@@ -15,7 +15,7 @@ FROM crypto_algorithms
 WHERE status = 'deprecated'
 ORDER BY created_at ASC;
 
--- Auto-generated from feature-modules-postgres.yaml (map@94ebe6c)
+-- Auto-generated from feature-modules-postgres.yaml (map@85230ed)
 -- engine: postgres
 -- table:  key_wrapper_layers_pq_readiness_summary
 
