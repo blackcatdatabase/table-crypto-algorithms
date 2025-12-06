@@ -17,7 +17,7 @@ use BlackCat\Database\Support\DtoHydrator;
 final class CryptoAlgorithmDtoMapper
 {
     /** @var array<string,string> Column -> DTO property */
-    private const COL_TO_PROP = [ 'variant_norm' => 'variantNorm', 'nist_level' => 'nistLevel', 'created_at' => 'createdAt' ];
+    private const COL_TO_PROP = [ 'id' => 'id', 'class' => 'class', 'name' => 'name', 'variant' => 'variant', 'variant_norm' => 'variantNorm', 'nist_level' => 'nistLevel', 'status' => 'status', 'params' => 'params', 'created_at' => 'createdAt' ];
 
     /** @var string[] */
     private const BOOL_COLS   = [];
@@ -39,13 +39,8 @@ final class CryptoAlgorithmDtoMapper
 
     private static function tz(): DateTimeZone
     {
-        if (self::$tzObj instanceof DateTimeZone) {
-            return self::$tzObj;
-        }
-        try {
+        if (!(self::$tzObj instanceof DateTimeZone)) {
             self::$tzObj = new DateTimeZone(self::TZ);
-        } catch (\Throwable) {
-            self::$tzObj = new DateTimeZone('UTC');
         }
         return self::$tzObj;
     }
