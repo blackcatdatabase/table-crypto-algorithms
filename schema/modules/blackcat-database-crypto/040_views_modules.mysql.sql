@@ -1,5 +1,22 @@
 -- Auto-generated from feature-modules-mysql.yaml (map@sha1:F2224DD310A34E10A80882FE9641E685E98B51E8)
 -- engine: mysql
+-- table:  crypto_algorithms_deprecation
+
+-- Algorithms nearing deprecation (status active but deprecation_date set)
+CREATE OR REPLACE ALGORITHM=TEMPTABLE SQL SECURITY INVOKER VIEW vw_crypto_algorithms_deprecation AS
+SELECT
+  id,
+  name,
+  class,
+  status,
+  nist_level,
+  created_at
+FROM crypto_algorithms
+WHERE status = 'deprecated'
+ORDER BY created_at ASC;
+
+-- Auto-generated from feature-modules-mysql.yaml (map@sha1:F2224DD310A34E10A80882FE9641E685E98B51E8)
+-- engine: mysql
 -- table:  key_wrapper_layers_pq_readiness_summary
 
 -- One-row PQ readiness snapshot
@@ -16,3 +33,4 @@ SELECT
      FROM signatures s
      JOIN crypto_algorithms ca ON ca.id = s.algo_id
     WHERE ca.class='sig' AND ca.nist_level IS NOT NULL) AS pq_signatures_total;
+
