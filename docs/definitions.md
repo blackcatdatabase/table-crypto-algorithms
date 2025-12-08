@@ -5,13 +5,13 @@ Catalog of supported cryptographic primitives.
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| class | TEXT | NO |  | Algorithm class. (enum: kem, sig, hash, symmetric) |
-| created_at | TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Catalog insertion timestamp (UTC). |
+| class | ENUM('kem','sig','hash','symmetric') | NO |  | Algorithm class. (enum: kem, sig, hash, symmetric) |
+| created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Catalog insertion timestamp (UTC). |
 | id | BIGINT | NO |  | Surrogate primary key. |
-| name |  | NO |  | Canonical algorithm name (e.g., ML-KEM-768). |
+| name | VARCHAR(120) | NO |  | Canonical algorithm name (e.g., ML-KEM-768). |
 | nist_level | SMALLINT | YES |  | Post-quantum NIST security level, if any. |
-| params | JSONB | YES |  | JSON metadata with algorithm-specific parameters. |
-| status | TEXT | NO | active | Lifecycle flag. (enum: active, deprecated, experimental) |
+| params | JSON | YES |  | JSON metadata with algorithm-specific parameters. |
+| status | ENUM('active','deprecated','experimental') | NO | active | Lifecycle flag. (enum: active, deprecated, experimental) |
 | variant | VARCHAR(80) | YES |  | Optional variant descriptor (hybrid, FIPS profile, etc.). |
 
 ## Engine Details
@@ -51,5 +51,5 @@ Indexes:
 ## Views
 | View | Engine | Flags | File |
 | --- | --- | --- | --- |
-| vw_crypto_algorithms | mysql | algorithm=MERGE, security=INVOKER | [packages\crypto-algorithms\schema\040_views.mysql.sql](https://github.com/blackcatacademy/blackcat-database/packages/crypto-algorithms/schema/040_views.mysql.sql) |
-| vw_crypto_algorithms | postgres |  | [packages\crypto-algorithms\schema\040_views.postgres.sql](https://github.com/blackcatacademy/blackcat-database/packages/crypto-algorithms/schema/040_views.postgres.sql) |
+| vw_crypto_algorithms | mysql | algorithm=MERGE, security=INVOKER | [schema\040_views.mysql.sql](schema\040_views.mysql.sql) |
+| vw_crypto_algorithms | postgres |  | [schema\040_views.postgres.sql](schema\040_views.postgres.sql) |
