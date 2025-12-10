@@ -5,13 +5,13 @@ Catalog of supported cryptographic primitives.
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| class | ENUM('kem','sig','hash','symmetric') | NO |  | Algorithm class. (enum: kem, sig, hash, symmetric) |
-| created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Catalog insertion timestamp (UTC). |
+| class | mysql: ENUM('kem','sig','hash','symmetric') / postgres: TEXT | NO |  | Algorithm class. (enum: kem, sig, hash, symmetric) |
+| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Catalog insertion timestamp (UTC). |
 | id | BIGINT | NO |  | Surrogate primary key. |
 | name | VARCHAR(120) | NO |  | Canonical algorithm name (e.g., ML-KEM-768). |
 | nist_level | SMALLINT | YES |  | Post-quantum NIST security level, if any. |
-| params | JSON | YES |  | JSON metadata with algorithm-specific parameters. |
-| status | ENUM('active','deprecated','experimental') | NO | active | Lifecycle flag. (enum: active, deprecated, experimental) |
+| params | mysql: JSON / postgres: JSONB | YES |  | JSON metadata with algorithm-specific parameters. |
+| status | mysql: ENUM('active','deprecated','experimental') / postgres: TEXT | NO | active | Lifecycle flag. (enum: active, deprecated, experimental) |
 | variant | VARCHAR(80) | YES |  | Optional variant descriptor (hybrid, FIPS profile, etc.). |
 
 ## Engine Details
