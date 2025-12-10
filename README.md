@@ -110,8 +110,8 @@ graph LR
 _No engine differences detected._
 
 ## Constraints Snapshot
-- `created_at` – default=CURRENT_TIMESTAMP(6)
 - `class` – enum
+- `created_at` – default=CURRENT_TIMESTAMP(6)
 - `status` – default=active, enum
 
 ## Schema Files
