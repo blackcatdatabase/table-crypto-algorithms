@@ -3,16 +3,17 @@
 Catalog of supported cryptographic primitives.
 
 ## Columns
-| Column | Type | Null | Default | Description |
-| --- | --- | --- | --- | --- |
-| id | BIGINT | NO |  | Surrogate primary key. |
-| class | mysql: ENUM('kem','sig','hash','symmetric') / postgres: TEXT | NO |  | Algorithm class. (enum: kem, sig, hash, symmetric) |
-| name | VARCHAR(120) | NO |  | Canonical algorithm name (e.g., ML-KEM-768). |
-| variant | VARCHAR(80) | YES |  | Optional variant descriptor (hybrid, FIPS profile, etc.). |
-| nist_level | SMALLINT | YES |  | Post-quantum NIST security level, if any. |
-| status | mysql: ENUM('active','deprecated','experimental') / postgres: TEXT | NO | active | Lifecycle flag. (enum: active, deprecated, experimental) |
-| params | mysql: JSON / postgres: JSONB | YES |  | JSON metadata with algorithm-specific parameters. |
-| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Catalog insertion timestamp (UTC). |
+| Column | Type | Null | Default | Description | Crypto |
+| --- | --- | --- | --- | --- | --- |
+| id | BIGINT | NO |  | Surrogate primary key. |  |
+| class | mysql: ENUM('kem','sig','hash','symmetric') / postgres: TEXT | NO |  | Algorithm class. (enum: kem, sig, hash, symmetric) |  |
+| name | mysql: VARCHAR(120) | NO |  | Canonical algorithm name (e.g., ML-KEM-768). |  |
+| variant | VARCHAR(80) | YES |  | Optional variant descriptor (hybrid, FIPS profile, etc.). |  |
+| variant_norm | mysql: VARCHAR(80) / postgres: TEXT | YES |  | Generated normalized variant (IFNULL(variant, '')). |  |
+| nist_level | SMALLINT | YES |  | Post-quantum NIST security level, if any. |  |
+| status | mysql: ENUM('active','deprecated','experimental') / postgres: TEXT | NO | active | Lifecycle flag. (enum: active, deprecated, experimental) |  |
+| params | mysql: JSON / postgres: JSONB | YES |  | JSON metadata with algorithm-specific parameters. |  |
+| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Catalog insertion timestamp (UTC). |  |
 
 ## Engine Details
 
