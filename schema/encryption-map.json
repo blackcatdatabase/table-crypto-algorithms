@@ -1,0 +1,35 @@
+{
+  "tables": {
+    "crypto_algorithms": {
+      "columns": {
+        "class": {
+          "strategy": "passthrough"
+        },
+        "created_at": {
+          "strategy": "passthrough"
+        },
+        "id": {
+          "strategy": "passthrough"
+        },
+        "name": {
+          "strategy": "passthrough"
+        },
+        "nist_level": {
+          "strategy": "passthrough"
+        },
+        "params": {
+          "strategy": "passthrough"
+        },
+        "status": {
+          "strategy": "passthrough"
+        },
+        "variant": {
+          "strategy": "passthrough"
+        },
+        "variant_norm": {
+          "strategy": "passthrough"
+        }
+      }
+    }
+  }
+}
